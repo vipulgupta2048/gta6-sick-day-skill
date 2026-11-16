@@ -22,13 +22,30 @@ numbers are stripped from cards, and cards show first names only.
 
 ## Install
 
-In Command Code:
+Command Code:
 
 ```bash
 cmd skills add vipulgupta2048/gta6-sick-day-skill --global
 ```
 
-Then run `/sickday`. Drop `--global` to install it for the current project only.
+Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode and the other agents that
+support [Agent Skills](https://agentskills.io), with the [skills CLI](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add vipulgupta2048/gta6-sick-day-skill -g
+```
+
+Or copy `skills/sickday` into your agent's skills folder by hand:
+
+| Agent | Global | Project |
+|---|---|---|
+| Command Code | `~/.commandcode/skills/` | `.commandcode/skills/` |
+| Claude Code | `~/.claude/skills/` | `.claude/skills/` |
+| Codex, Cursor, Gemini CLI, Copilot, OpenCode, Amp | `~/.agents/skills/` | `.agents/skills/` |
+
+Then run `/sickday`, or ask for "a sick day letter for GTA 6".
+
+Needs Node.js 18+ and git. The GitHub CLI (`gh`) is optional: with it, letters can cite your PRs.
 
 ## Credits
 

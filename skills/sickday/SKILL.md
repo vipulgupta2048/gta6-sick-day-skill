@@ -1,7 +1,10 @@
 ---
 name: sickday
 description: "GTA 6 launch week: write a believable, funny out-of-office or sick-day letter to the user's manager that cites their real recent PRs and commits and promises Command Code keeps shipping while they are away, then render each letter as a shareable card image locally with a pre-filled X post. Use for \"/sickday\", \"write my sick day email\", \"out of office for GTA 6\", \"leave letter to my manager\", or a day-off note for standup or Slack."
-argument-hint: "[1-5 commitment] [email|slack] [manager name]"
+compatibility: "Any agent that can run shell commands. Needs Node.js 18+ and git; the GitHub CLI (gh) is optional. Renders offline."
+metadata:
+  author: vipulgupta2048
+  version: "1.0.0"
 ---
 
 # Sickday
@@ -22,9 +25,12 @@ Recent pull requests by the user:
 
 Arguments: $ARGUMENTS
 
-If a block above is empty or shows an error (no repo, no `gh`, shell disabled), gather the same
-facts yourself with the shell tool, and if there is still nothing, ask the user for two or three
-things they shipped recently. Never invent PR numbers or titles.
+Some agents run the `` !`...` `` lines above before you see this file and replace them with
+their output; others leave them as written. If a block still shows the command, is empty, or
+shows an error (no repo, no `gh`), run the same commands yourself with your shell tool. If
+`Arguments:` still reads `$ARGUMENTS`, take arguments from the user's message instead. If there
+is still no git history, ask the user for two or three things they shipped recently. Never
+invent PR numbers or titles.
 
 ## 1. Ask before writing
 
@@ -82,14 +88,17 @@ Hard rules:
 ## 3. Render the cards
 
 As soon as the three variants are written, render all three as card images. Put them in a JSON
-array and run the bundled renderer from this skill's base directory (Node 18+; local only:
-no network, nothing uploaded):
+array and run the bundled renderer. `<skill dir>` is the folder this SKILL.md is in (use its
+absolute path). Node 18+, local only: no network, nothing uploaded.
 
 ```bash
 node "<skill dir>/scripts/sickday.mjs" <<'JSON'
 [{"from": "Sam", "to": "Priya", "subject": "...", "body": "Hi Priya,\n\n...\n\nSam", "shipping": ["...", "..."], "heat": 3, "channel": "email"}]
 JSON
 ```
+
+If the shell has no heredocs (Windows PowerShell or cmd), write the JSON to a temp file and
+pass `--card <file>` instead.
 
 It prints JSON with `outDir` and, per card, `png` (the full path of the PNG), `postText`,
 `intentUrl` and `redacted` (anything it stripped, such as an email address). PNGs land in
