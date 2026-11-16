@@ -81,7 +81,15 @@ const REDACTIONS = Object.freeze([
 /** @param {unknown} value @returns {string} */
 function asText(value) {
 	if (typeof value !== 'string') return '';
-	return value.replace(/\s+/g, ' ').trim();
+	return undash(value).replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Cards never carry em or en dashes: a dash between words becomes a comma.
+ * @param {string} text @returns {string}
+ */
+function undash(text) {
+	return text.replace(/[ \t]*[\u2013\u2014][ \t]*/g, ', ');
 }
 
 /**
@@ -92,7 +100,7 @@ function asText(value) {
  */
 function asMultiline(value) {
 	if (typeof value !== 'string') return '';
-	return tidy(value.replace(/\r\n?/g, '\n'));
+	return tidy(undash(value.replace(/\r\n?/g, '\n')));
 }
 
 /** @param {string} text @returns {string} */

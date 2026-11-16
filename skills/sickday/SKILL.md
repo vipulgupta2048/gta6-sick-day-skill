@@ -81,6 +81,19 @@ What makes them land:
   even level 5 is kind to the manager.
 - Match the channel: email has a greeting and sign-off; Slack is lowercase-friendly and short.
 
+How it should read:
+
+- **Like a real person wrote it.** Someone who likes their manager and has sent this kind of
+  note before. Plain words, contractions, short sentences, one concrete detail per point.
+- **Funny through understatement.** Deadpan, specific, said once. The humour comes from how
+  reasonable it sounds. Never explain the joke, no puns, no emoji, no exclamation marks.
+- **No dashes.** Never use an em dash or an en dash. Use a comma, a period or a colon.
+- **No filler.** None of: "I hope this finds you well", "just wanted to", "reach out",
+  "rest assured", "seamless", "leverage", "excited to", "circle back", "it's not X, it's Y",
+  or lists of three adjectives. If a coworker would guess it was written by AI, rewrite it.
+
+Read each letter once more before rendering and fix anything that breaks these.
+
 Also pick up to three **shipping** lines for the card (at most 52 characters each), the work
 Command Code covers while they are out.
 
