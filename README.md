@@ -8,10 +8,10 @@ agent keeps shipping while you are out. It also renders each letter as a shareab
 
 ## What it does
 
-1. Asks for your first name, your manager's first name, email or Slack, a commitment level
-   (1 calendar invite, 2 polite heads-up, 3 vague but sincere, 4 suspicious timing,
-   5 already logged off) and optional details: team, days off, things to mention or leave out.
-2. Writes three letter variants from your own git history.
+1. Asks for your first name, your manager's first name and, optionally,
+   anything else the note should mention. Letters are emails unless you ask for Slack.
+2. Writes three letter variants from your own git history and rolls a commitment level for
+   each, from 1 "calendar invite" to 5 "already logged off". The level is the card's verdict.
 3. Renders each as a 2400x1260 PNG card in `~/Downloads/sickday/`, printed with its full path.
 4. Lets you pick one, regenerate, go hotter or milder, or edit a line.
 5. Hands over the letter to copy, the card path, and a pre-filled X post link. You attach the

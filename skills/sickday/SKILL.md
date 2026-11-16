@@ -39,14 +39,13 @@ Always ask first, in ONE short message, before writing anything. Prefill what yo
 
 1. **Your first name** (as it should appear on the letter; default: first name from git)
 2. **Your manager's first name**
-3. **Channel:** email or Slack DM (default email)
-4. **Commitment 1-5:** 1 calendar invite, 2 polite heads-up, 3 vague but sincere (default),
-   4 suspicious timing, 5 already logged off
-5. **Optional, to make it yours:** team name, days off (default Thursday Nov 19, back Friday),
-   anything to mention (a project, a running team joke, who covers on-call) and anything to
-   leave out
+3. **Anything else the note should mention?** (optional)
 
-Never guess the manager's name. If the user skips the optional ones, carry on without them.
+Do not ask about the channel or the commitment level. The letter is an email unless the user
+says Slack, and you pick the commitment level yourself (step 2).
+
+The day off is Thursday Nov 19, back Friday, unless the user names other dates in their
+answer. Never guess the manager's name. If the user skips the optional one, carry on.
 Do not ask again after they answer, unless the manager's name is still missing.
 
 ## 2. Write three variants
@@ -54,6 +53,17 @@ Do not ask again after they answer, unless the manager's name is still missing.
 Each variant has a **subject** (email subject, or the one-line headline for a Slack DM, at most
 72 characters) and a **body** of at most 520 characters, greeting and sign-off included. Short
 letters read better and the body is exactly what goes on the card.
+
+**You set the commitment level** (`heat` 1-5 in the JSON) for each variant: roll it, then
+write the letter to match. Spread the three across the scale and change them every run, so
+one run might give 1, 3, 5 and the next 2, 4, 5. The level is the card's punchline: it should
+read as a verdict on that letter. The scale:
+
+1. **Calendar invite:** they could send it as is
+2. **Polite heads-up:** plausible, slightly too cheerful
+3. **Vague but sincere:** nothing technically false
+4. **Suspicious timing:** the date is doing all the talking
+5. **Already logged off:** openly "GTA 6 is out", still warm, still covers the work
 
 Format the body as a real message, with line breaks (`\n` in the JSON): the greeting on its
 own line, one or two short paragraphs separated by a blank line, and the sign-off (with the
@@ -67,9 +77,8 @@ What makes them land:
   fixes, releases. The joke is that the handover is genuinely good.
 - **Command Code is on shift.** Every letter promises the agent keeps shipping while they
   are out: which PRs it will finish, which tests it will babysit.
-- **Plausible first, absurd second.** Level 1 is a letter they could actually send. Level 5 is
-  openly "I am not sick, GTA 6 is out" but still warm, still covers the work, still kind to the
-  manager. Escalate absurdity, never meanness.
+- **Plausible first, absurd second.** Escalate absurdity with the level, never meanness:
+  even level 5 is kind to the manager.
 - Match the channel: email has a greeting and sign-off; Slack is lowercase-friendly and short.
 
 Also pick up to three **shipping** lines for the card (at most 52 characters each), the work
@@ -93,7 +102,7 @@ absolute path). Node 18+, local only: no network, nothing uploaded.
 
 ```bash
 node "<skill dir>/scripts/sickday.mjs" <<'JSON'
-[{"from": "Sam", "to": "Priya", "subject": "...", "body": "Hi Priya,\n\n...\n\nSam", "shipping": ["...", "..."], "heat": 3, "channel": "email"}]
+[{"from": "Sam", "to": "Priya", "subject": "...", "body": "Hi Priya,\n\n...\n\nSam", "shipping": ["...", "..."], "heat": 4, "channel": "email"}]
 JSON
 ```
 
@@ -106,8 +115,8 @@ It prints JSON with `outDir` and, per card, `png` (the full path of the PNG), `p
 `--out-dir <dir>` only if the user asks for somewhere else. Cards are PNG only. If the
 script fails, show its error and still give the letters as text.
 
-Show the three variants numbered, each with its subject, body and the full PNG path. Then offer: pick
-one (1-3), `r` to regenerate all three (and re-render), `hotter` / `milder` to shift the commitment level,
+Show the three variants numbered, each with its commitment level, subject, body and the full PNG path. Then offer: pick
+one (1-3), `r` to regenerate all three (and re-render), `hotter` / `milder` to reroll the levels up or down, `slack` to rewrite them as Slack DMs,
 or edit a line (re-render that card).
 
 ## 4. Hand over the pick
