@@ -22,14 +22,13 @@ numbers are stripped from cards, and cards show first names only.
 
 ## Install
 
-Command Code:
+In Command Code:
 
 ```bash
-git clone https://github.com/vipulgupta2048/gta6-sick-day-skill
-mkdir -p ~/.commandcode/skills && cp -R gta6-sick-day-skill/skills/sickday ~/.commandcode/skills/
+cmd skills add vipulgupta2048/gta6-sick-day-skill --global
 ```
 
-Other agents that read `~/.agents/skills` work the same way. Then run `/sickday`.
+Then run `/sickday`. Drop `--global` to install it for the current project only.
 
 ## Credits
 
