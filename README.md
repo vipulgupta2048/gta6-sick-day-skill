@@ -4,6 +4,8 @@ A skill for GTA 6 launch week (Thursday, Nov 19, 2026). It writes a believable, 
 letter to your manager that cites your real recent commits and PRs and promises your coding
 agent keeps shipping while you are out. It also renders each letter as a shareable card PNG.
 
+![A /sickday card: an out of office request from Sam to Priya, with what the agent ships while Sam is out and the commitment level](docs/card.png)
+
 ## What it does
 
 1. Asks for your first name, your manager's first name, email or Slack, a commitment level

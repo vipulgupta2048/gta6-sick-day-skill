@@ -403,7 +403,7 @@ function leftSection(card, logoSvg) {
 	return [
 		logo(logoSvg, PAD, 44, 30),
 		channelTag(card),
-		label('>_ Out of office', PAD, 136, PURPLE, 22),
+		label('>_ Out of Office Request', PAD, 136, PURPLE, 22),
 		addressLine(card),
 		textBlock({
 			lines: subject,
