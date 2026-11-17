@@ -1,6 +1,6 @@
 ---
 name: sickday
-description: "Writes a funny, believable GTA 6 day-off email to your manager from your real commits, plus a shareable card. Use for a sick day or out-of-office note."
+description: "Writes a funny, believable GTA 6 day-off email to your manager from your commits"
 compatibility: "Any agent that can run shell commands. Needs Node.js 18+ and git; the GitHub CLI (gh) is optional. Renders offline."
 metadata:
   author: vipulgupta2048
@@ -9,11 +9,21 @@ metadata:
 
 # Sickday
 
-GTA 6 is out Thursday, Nov 19, 2026. The user wants that day off (back Friday) unless they
-name other dates; never move the day off to fit today's date. Write the letter to their manager, make it
-funny because it is so plausible, and hand them a card they can post on X.
+Write a day-off letter to the user's manager, make it funny because it is so plausible, and
+hand them a card they can post on X.
+
+GTA 6 comes out Thursday, Nov 19, 2026. Pick the day off from today's date (below):
+
+- **On or before Nov 19:** the day off is Thursday Nov 19, back Friday. It is launch day.
+- **After Nov 19:** the day off is the next workday, back the workday after. The game is
+  already out, so lean into that (the save file is "at a delicate point", the copy finally
+  arrived, the weekend was not enough). Never pretend it is launch day.
+
+The user's own dates always win.
 
 ## Context already gathered
+
+Today: !`date '+%A, %b %-d, %Y'`
 
 Git user: !`git config user.name`
 
@@ -39,13 +49,17 @@ Always ask first, in ONE short message, before writing anything. Prefill what yo
 
 1. **Your first name** (as it should appear on the letter; default: first name from git)
 2. **Your manager's first name**
-3. **Anything else the note should mention?** (optional)
+3. **Anything else the note should mention?** (optional). Offer one example: *keep it vague*,
+   which keeps project and PR names off the letter and the card, since the card is public
+   once posted.
 
 Do not ask about the channel or the commitment level. The letter is an email unless the user
 says Slack, and you pick the commitment level yourself (step 2).
 
-The day off is Thursday Nov 19, back Friday, unless the user names other dates in their
-answer. Never guess the manager's name. If the user skips the optional one, carry on.
+Show the day off you picked (from the dates at the top) as a default they can change.
+If they say keep it vague (or ask for privacy), describe the work generically everywhere,
+subject and shipping lines included: "the release", "a flaky test suite", "the API work". No
+PR numbers, repo names or project names. Never guess the manager's name. If the user skips the optional one, carry on.
 Do not ask again after they answer, unless the manager's name is still missing.
 
 ## 2. Write three variants

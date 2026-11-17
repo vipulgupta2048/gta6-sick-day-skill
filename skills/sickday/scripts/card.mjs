@@ -43,13 +43,26 @@ const BORDER = 'rgba(255,255,255,0.1)';
 const BORDER_STRONG = 'rgba(255,255,255,0.16)';
 const PURPLE = '#a855f7';
 const EMERALD = '#10b981';
-const AMBER = '#f59e0b';
-const AMBER_SOFT = 'rgba(245,158,11,0.16)';
+
+/** One accent per commitment level, cool to hot, so levels read apart in a feed. */
+const LEVEL_COLORS = Object.freeze({
+	1: '#10b981',
+	2: '#38bdf8',
+	3: '#f59e0b',
+	4: '#f97316',
+	5: '#f43f5e',
+});
+
+/** @param {string} hex @param {number} alpha @returns {string} */
+function withAlpha(hex, alpha) {
+	const [r, g, b] = [1, 3, 5].map(at => Number.parseInt(hex.slice(at, at + 2), 16));
+	return `rgba(${r},${g},${b},${alpha})`;
+}
 
 const HOOKS = Object.freeze({
-	1: 'GTA 6 is out Thursday. I took the day off. My coding agent did not.',
+	1: 'Took a day off for GTA 6. My coding agent did not.',
 	2: 'Wrote my GTA 6 day-off note. My agent covers the PRs while I am away.',
-	3: 'Calling in for GTA 6 launch day. The excuse cites my real PRs.',
+	3: 'Calling in for GTA 6. The excuse cites my real PRs.',
 	4: 'I am out sick for GTA 6. My agent is not. My manager gets this at 9am.',
 	5: 'Not sick. GTA 6 is out. My agent is shipping. Sending this to my manager anyway.',
 });
@@ -496,17 +509,18 @@ function shippingRow(card) {
 /** @param {Card} card @returns {string} */
 function heatRow(card) {
 	const {top, x} = rowFrame(2);
+	const accent = LEVEL_COLORS[card.heat];
 	const blockWidth = (CARD_WIDTH - x - 40 - 4 * 10) / 5;
 	const blocks = [1, 2, 3, 4, 5]
 		.map(level => {
 			const on = level <= card.heat;
 			const height = on ? 30 + level * 4 : 22;
 			const left = x + (level - 1) * (blockWidth + 10);
-			return `<rect x="${left}" y="${top + 160 - height}" width="${blockWidth}" height="${height}" fill="${on ? AMBER : AMBER_SOFT}"/>`;
+			return `<rect x="${left}" y="${top + 160 - height}" width="${blockWidth}" height="${height}" fill="${on ? accent : withAlpha(accent, 0.16)}"/>`;
 		})
 		.join('');
 	return [
-		label('Commitment level', x, top + 52, AMBER, 18),
+		label('Commitment level', x, top + 52, accent, 18),
 		textBlock({
 			lines: [HEAT_LABELS[card.heat]],
 			x,
