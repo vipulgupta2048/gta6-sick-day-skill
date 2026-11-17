@@ -1,6 +1,6 @@
 ---
 name: sickday
-description: "GTA 6 launch week: write a believable, funny out-of-office or sick-day letter to the user's manager that cites their real recent PRs and commits and promises Command Code keeps shipping while they are away, then render each letter as a shareable card image locally with a pre-filled X post. Use for \"/sickday\", \"write my sick day email\", \"out of office for GTA 6\", \"leave letter to my manager\", or a day-off note for standup or Slack."
+description: "Writes a funny, believable GTA 6 day-off email to your manager from your real commits, plus a shareable card. Use for a sick day or out-of-office note."
 compatibility: "Any agent that can run shell commands. Needs Node.js 18+ and git; the GitHub CLI (gh) is optional. Renders offline."
 metadata:
   author: vipulgupta2048
