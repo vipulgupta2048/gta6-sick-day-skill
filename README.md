@@ -4,11 +4,15 @@ A skill for GTA 6 launch week (Thursday, Nov 19, 2026). It writes a believable, 
 letter to your manager that cites your real recent commits and PRs and promises your coding
 agent keeps shipping while you are out. It also renders each letter as a shareable card PNG.
 
-![A /sickday card: an out of office request from Sam to Priya, with what the agent ships while Sam is out and the commitment level](docs/card.png)
+## Examples
 
-## Demo
+Level 2, polite heads-up:
 
-![Running /sickday in Command Code: it asks two questions, writes three letters at different commitment levels, renders a card for each and hands over the pick with an X post link](docs/demo.gif)
+![A /sickday card at commitment level 2, polite heads-up: Sam asks Priya for Thursday off and lists what Command Code ships meanwhile](docs/card-level-2.png)
+
+Level 5, already logged off:
+
+![A /sickday card at commitment level 5, already logged off: Sam tells Priya plainly they are off for the GTA 6 launch](docs/card-level-5.png)
 
 ## What it does
 
