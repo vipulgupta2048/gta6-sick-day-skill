@@ -6,6 +6,10 @@ agent keeps shipping while you are out. It also renders each letter as a shareab
 
 ![A /sickday card: an out of office request from Sam to Priya, with what the agent ships while Sam is out and the commitment level](docs/card.png)
 
+## Demo
+
+![Running /sickday in Command Code: it asks two questions, writes three letters at different commitment levels, renders a card for each and hands over the pick with an X post link](docs/demo.gif)
+
 ## What it does
 
 1. Asks for your first name, your manager's first name and, optionally,
