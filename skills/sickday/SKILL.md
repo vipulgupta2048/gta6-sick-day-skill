@@ -44,7 +44,8 @@ invent PR numbers or titles.
 
 ## 1. Ask before writing
 
-Always ask first, in ONE short message, before writing anything. Prefill what you already know
+Always ask first, in ONE short plain chat message, before writing anything. Do not use a
+question or multiple-choice tool: the user answers everything in one reply. Prefill what you already know
 (arguments, git user name) as defaults so the user can just confirm:
 
 1. **Your first name** (as it should appear on the letter; default: first name from git)
