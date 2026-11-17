@@ -143,7 +143,8 @@ It prints JSON with `outDir` and, per card, `png` (the full path of the PNG), `p
 `--out-dir <dir>` only if the user asks for somewhere else. Cards are PNG only. If the
 script fails, show its error and still give the letters as text.
 
-Show the three variants numbered, each with its commitment level, subject, body and the full PNG path. Then offer: pick
+Show the three variants numbered, each with its commitment level (say "Level 4: suspicious timing", never "heat"), subject, body and
+the full PNG path. Show letters as plain text, not in code blocks. Then offer: pick
 one (1-3), `r` to regenerate all three (and re-render), `hotter` / `milder` to reroll the levels up or down, `slack` to rewrite them as Slack DMs,
 or edit a line (re-render that card).
 
@@ -151,7 +152,8 @@ or edit a line (re-render that card).
 
 When the user picks one, reply with:
 
-1. The letter itself in a fenced block, ready to copy into email or Slack.
+1. The letter itself in a ```text fenced block (plain text, no syntax colors), ready to copy
+   into email or Slack.
 2. **Card:** the full PNG path exactly as the script printed it (never shortened to a file
    name or `~`). Remind them to look at it before posting: once posted it is public.
 3. **Post on X:** the `intentUrl` as a link. It opens the composer with the post text; they
