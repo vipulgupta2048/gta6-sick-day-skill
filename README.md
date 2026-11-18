@@ -33,14 +33,14 @@ numbers are stripped from cards, and cards show first names only.
 Command Code:
 
 ```bash
-cmd skills add vipulgupta2048/gta6-sick-day-skill --global
+cmd skills add vipulgupta2048/gta6-sickday-skill --global
 ```
 
 Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode and the other agents that
 support [Agent Skills](https://agentskills.io), with the [skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add vipulgupta2048/gta6-sick-day-skill -g
+npx skills add vipulgupta2048/gta6-sickday-skill -g
 ```
 
 Or copy `skills/sickday` into your agent's skills folder by hand:
