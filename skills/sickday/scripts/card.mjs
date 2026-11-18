@@ -541,6 +541,7 @@ function footer() {
 	const creditX = CARD_WIDTH - 40 - credit.length * 14 * MONO_ADVANCE;
 	return [
 		`<line x1="0" y1="${top}" x2="${CARD_WIDTH}" y2="${top}" stroke="${BORDER}"/>`,
+		textBlock({lines: ['/sickday'], x: PAD, y: top + 34, size: 14, lineHeight: 14, fill: MUTED}),
 		textBlock({
 			lines: [credit],
 			x: creditX,
