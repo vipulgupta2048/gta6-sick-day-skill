@@ -12,12 +12,18 @@ metadata:
 Write a day-off letter to the user's manager, make it funny because it is so plausible, and
 hand them a card they can post on X.
 
-GTA 6 comes out Thursday, Nov 19, 2026. Pick the day off from today's date (below):
+GTA 6 comes out Thursday, Nov 19, 2026. People are taking more than one day, so pick when
+the time off starts from today's date (below), and how long it runs from each draft's
+commitment level:
 
-- **On or before Nov 19:** the day off is Thursday Nov 19, back Friday. It is launch day.
-- **After Nov 19:** the day off is the next workday, back the workday after. The game is
-  already out, so lean into that (the save file is "at a delicate point", the copy finally
-  arrived, the weekend was not enough). Never pretend it is launch day.
+- **On or before Nov 19:** the time off starts Thursday Nov 19, launch day.
+- **After Nov 19:** the time off starts the next workday. The game is already out, so lean
+  into that (the save file is "at a delicate point", the copy finally arrived, the weekend
+  was not enough). Never pretend it is launch day.
+
+How long, by level: 1 and 2 take one day. 3 and 4 take two days, which usually makes a long
+weekend (Thursday and Friday, back Monday). 5 takes most of the week after. Always state the
+exact days and the return day in the letter.
 
 The user's own dates always win.
 
@@ -57,7 +63,9 @@ question or multiple-choice tool: the user answers everything in one reply. Pref
 Do not ask about the channel or the commitment level. The letter is an email unless the user
 says Slack, and you pick the commitment level yourself (step 2).
 
-Show the day off you picked (from the dates at the top) as a default they can change.
+Show the start day you picked (from the dates at the top) and say the drafts run from one
+day to most of the week by level. Both are defaults they can change; their dates apply to all
+three drafts.
 If they say keep it vague (or ask for privacy), describe the work generically everywhere,
 subject and shipping lines included: "the release", "a flaky test suite", "the API work". No
 PR numbers, repo names or project names. Never guess the manager's name. If the user skips the optional one, carry on.

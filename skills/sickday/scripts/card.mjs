@@ -422,7 +422,7 @@ function leftSection(card, logoSvg) {
 	const body = wrapText(card.body, charsPerLine(width, bodySize), bodyLines);
 
 	return [
-		logo(logoSvg, PAD, 44, 30),
+		logo(logoSvg, PAD, 48, 22),
 		channelTag(card),
 		label('>_ Out of Office Request', PAD, 136, PURPLE, 22),
 		addressLine(card),
@@ -541,7 +541,6 @@ function footer() {
 	const creditX = CARD_WIDTH - 40 - credit.length * 14 * MONO_ADVANCE;
 	return [
 		`<line x1="0" y1="${top}" x2="${CARD_WIDTH}" y2="${top}" stroke="${BORDER}"/>`,
-		label('Commitment certified by Command Code', PAD, top + 34, FAINT, 13),
 		textBlock({
 			lines: [credit],
 			x: creditX,
