@@ -6,7 +6,7 @@
 // network, no upload, nothing posted. The user attaches the PNG and posts.
 // PNG only: if resvg cannot load, it exits non-zero and says why.
 
-import {existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
+import {existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync} from 'node:fs';
 import {homedir, tmpdir} from 'node:os';
 import {dirname, join, resolve} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
@@ -157,7 +157,8 @@ async function main() {
 }
 
 const isEntry =
-	process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+	process.argv[1] &&
+	realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url));
 if (isEntry) {
 	main().catch(error => {
 		process.stderr.write(`sickday: ${message(error)}\n`);
